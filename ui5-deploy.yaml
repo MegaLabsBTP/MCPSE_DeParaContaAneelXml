@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: megawork.deparaaneelxml
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: PublicCloud_Verene_Dev
+          url: https://my419620.s4hana.cloud.sap
+          authenticationType: reentranceTicket # SAML support for vscode
+        app:
+          name: ZMCPSE_DP_ANXML
+          description: De x Para - Conta Aneel x Conta XML
+          package: ZMCPSE
+          transport: MG1K900789
+        exclude:
+          - /test/
