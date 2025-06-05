@@ -21,6 +21,6 @@ builder:
           name: ZMCPSE_DP_ANXML
           description: De x Para - Conta Aneel x Conta XML
           package: ZMCPSE
-          transport: MG1K900789
+          transport: MG1K900884
         exclude:
           - /test/
